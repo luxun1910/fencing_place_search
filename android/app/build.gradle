@@ -41,7 +41,18 @@ if (project.hasProperty('dart-defines')) {
 }
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
+    namespace "com.unanimousworks.fencing_place_search"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
